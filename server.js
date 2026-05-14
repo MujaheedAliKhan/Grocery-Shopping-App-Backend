@@ -13,8 +13,8 @@ const chatbotRoute = require("./routes/chatbotRoute");
 //Middlewares
 const {notFound, errorHandler} = require("./middleware/errorMiddleware");
 const allowedOrigin = [
-  "http://localhost:5173/",
-  "http://grocery-shopping-app-frontend.vercel.app/"
+  "http://localhost:5173",
+  "http://grocery-shopping-app-frontend.vercel.app"
 ]
 
 app.use(cors({
