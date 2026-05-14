@@ -12,13 +12,15 @@ const chatbotRoute = require("./routes/chatbotRoute");
 
 //Middlewares
 const {notFound, errorHandler} = require("./middleware/errorMiddleware");
+const allowedOrigin = [
+  "http://localhost:3000/",
+  "http://grocery-shopping-app-frontend.vercel.app/"
+]
 
-
-app.use(cors());
-// app.use(cors({
-//   origin: "https://grocery-shopping-frontend.vercel.app",
-//   credentials:true
-// })); //This will help to communicate Allow Access Origin
+app.use(cors({
+  origin: allowedOrigin,
+  credentials:true
+})); //This will help to communicate Allow Access Origin
 app.use(express.json()); //It accepts the Json data later
 app.use(express.urlencoded({ extended: true }));
 
